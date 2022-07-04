@@ -1,0 +1,20 @@
+syntax = "proto3"; // proto3 을 사용함을 정의한다.
+
+option java_multiple_files = true;
+option java_package = "org.example.demo.proto";
+option java_outer_classname = "HelloWorldProto";
+
+// service 를 정의한다
+service GreetingService {
+  // 예제를 위한 Sample 정의
+  rpc Greetings (GreetingRequest) returns (GreetingResponse) {}
+}
+
+// 요청 Data 규약, 문자열 (타입) name 을 1 (필드 인덱스)로 사용
+message GreetingRequest {
+  string name = 1;
+}
+
+message GreetingResponse {
+  string message = 1;
+}
